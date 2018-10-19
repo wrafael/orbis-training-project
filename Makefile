@@ -1,4 +1,4 @@
-include makefiles/task.mk makefiles/deploy-ghpages.mk
+include makefiles/task.mk makefiles/deploy-ghpages.mk makefiles/jenkins-docker.mk
 #477cbbe4105e4bdcad25108e1f258e29
 ## DEPLOY ##
 

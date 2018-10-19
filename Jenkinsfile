@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'make build'
-                sh 'make install'
+                sh 'make jenkins-workspace'
+                sh 'make jenkins-install'
             }
         }
         stage('Test') {
             steps {
-                sh 'make start'
+                sh 'make jenkins-start'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'make release'
-                sh 'make deploy.ghpages'
+                sh 'echo release'
+                sh 'echo deploy.ghpages'
             }
         }
     }
