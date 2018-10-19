@@ -63,7 +63,7 @@ docker run --net=capacitacion-problema1_default -it node:10.10.0-slim curl http:
 ## Para ejecutar el archivo example.sh
 
 ````
-docker run --entrypoint=/app/resources/example.sh -it -v $PWD:/app manuelaflores16/orbis-training-docker:4.0.0   
+docker run --entrypoint=/app/resources/example.sh -it -v $PWD:/app iamges   
 ````
 
 ## Para ejecutar el archivo example.sh con un entorno de variable 

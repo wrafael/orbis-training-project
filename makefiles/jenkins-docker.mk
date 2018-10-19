@@ -17,4 +17,5 @@ jenkins-start:
 	docker network create orbis_net
 	docker run -d --net=orbis_net --name node_jenkins_start -p 3030:1042 --volumes-from new_volumen -w /app ${DOCKER_IMAGE} npm start
 
- 
+jenkins-curl:
+	docker run --net=orbis_net -it node:10.10.0-slim curl http://172.18.0.2:1042
