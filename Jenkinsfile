@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh 'make install'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh 'make start'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                sh 'make release && make deploy.ghpages'
             }
         }
     }

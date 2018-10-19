@@ -2,7 +2,7 @@ version: "3"
 services:
  node:
   container_name: Manuela
-  image: manuelaflores16/orbis-training-docker:4.0.0
+  image: 990150863/orbis-training-docker:4.0.0
   build: .
   ports:
    - 3030:1042

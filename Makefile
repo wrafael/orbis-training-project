@@ -2,7 +2,8 @@ include makefiles/task.mk makefiles/deploy-ghpages.mk
 #477cbbe4105e4bdcad25108e1f258e29
 ## DEPLOY ##
 
-NAME_IMAGE = manuelaflores16/orbis-training-docker
+USER_DOCKER = 990150863
+NAME_IMAGE = 990150863/orbis-training-docker
 DOCKER_TAG = 4.0.0
 DOCKER_IMAGE = ${NAME_IMAGE}:${DOCKER_TAG}
 NAME = "Manuela"
@@ -27,7 +28,7 @@ test:
 
 
 build-jenkins:
-	docker build -t ${NAME_IMAGE}/jenkins-deploy:0.1.0 docker/jenkins
+	docker build -t ${USER_DOCKER}/jenkins-deploy:0.1.0 docker/jenkins
 
 start-jenkins:
 	docker run --rm \
@@ -35,4 +36,4 @@ start-jenkins:
 	-p 8080:8080 \
 	-v ${PWD}/jenkins-data:/var/jenkins_home \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	${NAME_IMAGE}/jenkins-deploy:0.1.0
+	${USER_DOCKER}/jenkins-deploy:0.1.0

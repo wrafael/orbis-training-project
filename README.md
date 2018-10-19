@@ -33,19 +33,19 @@ docker-compose up
 ## Para llevar el contenido de mi proyecto al container
 
  ````
- docker run -it -v $PWD:/app manuelaflores16/orbis-training-docker:4.0.0 sh -c "npm install && ls"
+ docker run -it -v $PWD:/app 990150863/orbis-training-docker:4.0.0 sh -c "npm install && ls"
 ````
 
 ## Para levantar el container y exponerlo en el puerto 3030
 
 ````
-docker run -it -v $PWD:/app -p "3030:1042" manuelaflores16/orbis-training-docker:4.0.0 npm start   
+docker run -it -v $PWD:/app -p "3030:1042" 990158063/orbis-training-docker:4.0.0 npm start   
 ````
 
 ## Ejecuta el realease 
 
 ````
-docker run -it -v $PWD:/app -p "3030:1042" manuelaflores16/orbis-training-docker:4.0.0 npm run release 
+docker run -it -v $PWD:/app -p "3030:1042" 990158063/orbis-training-docker:4.0.0 npm run release 
 ````
 
 ## Para encontrar la IP del container y la red asignada por default
