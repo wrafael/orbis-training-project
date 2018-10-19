@@ -28,6 +28,7 @@ git push origin --tags
 
  - Docker es un encapsulador de entornos y sirve para hacer nuestro desarrollo más fácil y sencillo mediante entornos.
 
+--- 
 6. ¿Cuál es la diferencia entre docker y VirtualBox?
 
  - Docker consume menos recursos que el virtualBox.
@@ -68,7 +69,7 @@ git push origin --tags
 
 3. ¿Cómo salgo de un contenedor de docker?
  - exit
-
+--- 
 4. ¿Se elimina el contenedor al salir de ella?
  - Sí
 5. ¿Cómo elimino un contenedor?
