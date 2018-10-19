@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-
-                sh 'make build && make install'
+                sh 'make build'
+                sh 'make install'
             }
         }
         stage('Test') {
@@ -15,7 +15,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'make release && make deploy.ghpages'
+                sh 'make release'
+                sh 'make deploy.ghpages'
             }
         }
     }
