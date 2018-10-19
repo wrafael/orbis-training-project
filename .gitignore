@@ -1,0 +1,5 @@
+/node_modules
+/deploy
+/build
+/jenkins-data/*
+/secrets/*
