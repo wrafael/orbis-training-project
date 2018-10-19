@@ -11,6 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'make jenkins-start'
+                sh 'make jenkins-curl'
             }
         }
         stage('Deploy') {

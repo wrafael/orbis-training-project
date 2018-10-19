@@ -1,5 +1,8 @@
 .PHONY: jenkins-docker
 
+JENKIS_NAME = jenkins_name
+JENKIS_NETWORK = jenkis_net
+JENKIS_VOLUMEN = jenkins_volumen
 
 docker.build:
 	docker build -t ${USER_DOCKER}/jenkins-deploy:1.0.0 docker/jenkins
@@ -7,15 +10,17 @@ docker.build:
 
 jenkins-workspace:
 	echo "project workspace new"
-	docker create -v /app --name new_volumen alpine
-	docker cp ./ new_volumen:/app
+	docker create -v /app --name ${JENKIS_VOLUMEN} alpine
+	docker cp ./ ${JENKIS_VOLUMEN}:/app
 
 jenkins-install:
-	docker run -t --rm --volumes-from new_volumen -w /app ${DOCKER_IMAGE} npm install
+	docker run -t --rm --volumes-from ${JENKIS_VOLUMEN} -w /app ${DOCKER_IMAGE} npm install
 
 jenkins-start:
-	docker network create orbis_net
-	docker run -d --net=orbis_net --name node_jenkins_start -p 3030:1042 --volumes-from new_volumen -w /app ${DOCKER_IMAGE} npm start
+	docker network create ${JENKIS_NETWORK}
+	docker run -d --net=${JENKIS_NETWORK} \
+	--name ${JENKIS_NAME} -p 3030:1042 \
+	--volumes-from ${JENKIS_VOLUMEN} -w /app ${DOCKER_IMAGE} npm start
 
 jenkins-curl:
-	docker run --net=orbis_net -it node:10.10.0-slim curl http://172.18.0.2:1042
+	echo "test"
