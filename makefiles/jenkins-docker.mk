@@ -11,6 +11,7 @@ docker.build:
 
 jenkins-workspace:
 	echo "project workspace new"
+	docker rm ${JENKIS_VOLUMEN}
 	docker create -v /app --name ${JENKIS_VOLUMEN} alpine
 	docker cp ./ ${JENKIS_VOLUMEN}:/app
 
